@@ -28,7 +28,7 @@ def goAround():
 	#print("Atualizando Valores \n")
     getGasosa()
     getCO()
-    time.sleep(1800)
+    time.sleep(900)
     goAround()
 
 def getGasosa():
