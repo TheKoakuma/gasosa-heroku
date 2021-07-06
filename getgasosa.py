@@ -50,7 +50,7 @@ def getCO():
     return "ok"
 
 def sendMessage(message):
-    url="https://discord.com/api/webhooks/815741780729397278/bTgA6xl8qq899Dzy3ixZ46qw2z4BYHgm6w8O4HnIHRMQ4DlDgYPM6yDr0rYN2CGp6cs4"
+    url=os.environ.get("DISCORD_WEBHOOK");
     requests.post(url, json={'content':message})
     return "ok"
 
