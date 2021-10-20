@@ -44,7 +44,8 @@ def getCO():
     driver.get('https://airline4.net/co2.php')
     rawco2=driver.execute_script('return document.getElementById("sumCost").innerHTML.replace(",","");')
     #print(rawco2)
-    if int(rawco2)<=120:
+    #if int(rawco2)<=120:
+    if int(rawco2)<=1000:
         msg="Salve a natureza, CO2 por apenas $"+rawco2
         sendMessage(msg);
     return "ok"
@@ -52,6 +53,13 @@ def getCO():
 def sendMessage(message):
     url=os.environ.get("DISCORD_WEBHOOK");
     requests.post(url, json={'content':message})
+    return "ok"
+
+def sendZap(message):
+    url=os.environ.get("ZAPZAP_WEBHOOK");
+    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+    msg="name="+os.environ.get("ZAP_GRUPO")+"&message="+message;
+    requests.post(url, headers=headers, data=msg)
     return "ok"
 
 login()
