@@ -51,6 +51,10 @@ def getCO():
     return "ok"
 
 def sendMessage(message):
+    sendDiscord(message)
+    sendZap(message)
+
+def sendDiscord(message):
     url=os.environ.get("DISCORD_WEBHOOK");
     requests.post(url, json={'content':message})
     return "ok"
