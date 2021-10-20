@@ -36,7 +36,7 @@ def getGasosa():
     rawfuel=driver.execute_script('return document.getElementById("sumCost").innerHTML.replace(",","");')
     #print(rawfuel)
     if int(rawfuel)<=850:
-        msg="Corre negada, o Combustivel está so $"+rawfuel
+        msg="Corre negada, o Combustivel esta so $"+rawfuel
         sendMessage(msg)
     return "ok"
 
