@@ -36,7 +36,7 @@ def getGasosa():
     rawfuel=driver.execute_script('return document.getElementById("sumCost").innerHTML.replace(",","");')
     #print(rawfuel)
     if int(rawfuel)<=850:
-        msg="Corre negada, o Combustível está só $"+rawfuel
+        msg="Corre negada, o Combustivel está so $"+rawfuel
         sendMessage(msg)
     return "ok"
 
@@ -45,7 +45,7 @@ def getCO():
     rawco2=driver.execute_script('return document.getElementById("sumCost").innerHTML.replace(",","");')
     #print(rawco2)
     #if int(rawco2)<=120:
-    if int(rawco2)<=1000:
+    if int(rawco2)<=120:
         msg="Salve a natureza, CO2 por apenas $"+rawco2
         sendMessage(msg);
     return "ok"
